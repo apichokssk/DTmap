@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Building Map (CSS Shapes)</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            overflow-x: hidden;
+        }
+
+        header {
+            background-color: #3366cc;
+            color: white;
+            text-align: center;
+            padding: 15px;
+            font-size: 24px;
+            font-weight: bold;
+        }
+
+        footer {
+            background-color: #f1f1f1;
+            color: #666;
+            text-align: center;
+            padding: 15px;
+            position: relative;
+            bottom: 0;
+            width: 100%;
+        }
+
+        .button-container {
+            text-align: center;
+            margin: 20px 0;
+        }
+
+        .button-container button.active {
+            background-color: #3366cc;
+            color: white;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Header -->
+    <div class="header">
+        <div class="header-left">
+            <img src="/img/SUT_emblem_white.png" alt="SUT Logo">
+            <div class="university-name">
+                <div class="th">มหาวิทยาลัยเทคโนโลยีสุรนารี</div>
+                <div class="en">Suranaree University Of Technology</div>
+            </div>
+        </div>
+        <div class="language-buttons">
+            <button class="lang-btn">th</button>
+            <button class="lang-btn">en</button>
+        </div>
+    </div>
+
+    <div class="room-legend-container">
+        <div class="room-legend-column">
+            <div class="legend-item"
+                onclick="showRoom('ห้อง DL', 'ห้องปฏิบัติการเทคโนโลยีดิจิทัล', '/img/GPS/f3/DL.png')"> <img
+                    src="/img/icon/f3/icon_DL.png" /><span>ห้องปฏิบัติการเทคโนโลยีดิจิทัล 10 - 18</span></div>
+            <div class="legend-item"
+                onclick="showRoom('ห้อง D1', 'ห้องปฏิบัติการเทคโนโลยีดิจิทัลเชิงนวัฒกรรมขั้นสูง', '/img/GPS/f3/D1.png')">
+                <img src="/img/icon//f3/icon_D1.png" /><span>ห้องปฏิบัติการเทคโนโลยีดิจิทัลเชิงนวัฒกรรมขั้นสูง</span>
+            </div>
+            <div class="legend-item"
+                onclick="showRoom('ห้อง D2', 'ห้องปฏิบัติการธุรกิจอัจฉริยะและการวิเคราะห์ข้อมูล', '/img/GPS/f3/D2.png')">
+                <img src="/img/icon/f3/icon_D2.png" /><span>ห้องปฏิบัติการธุรกิจอัจฉริยะและการวิเคราะห์ข้อมูล</span>
+            </div>
+            <div class="legend-item"
+                onclick="showRoom('ห้อง D3', 'ห้องปฏิบัติการไซเบอร์สเปซและความมั่นคงปลอยภัยไซเบอร์', '/img/GPS/f3/D3.png')">
+                <img src="/img/icon/f3/icon_D3.png" /><span>ห้องปฏิบัติการไซเบอร์สเปซและความมั่นคงปลอยภัยไซเบอร์</span>
+            </div>
+            <div class="legend-item"
+                onclick="showRoom('ห้อง DS', 'ห้องปฏิบัติการด้านการผลิตรายการดิจิทัล', '/img/GPS/f3/DS.png')"><img
+                    src="/img/icon/f3/icon_DS.png" /><span>ห้องปฏิบัติการด้านการผลิตรายการดิจิทัล</span></div>
+            <div class="legend-item"
+                onclick="showRoom('ห้อง DS', 'ห้องปฏิบัติการด้านการผลิตรายการดิจิทัลขนาดเล็ก', '/img/GPS/f3/DS2.png')">
+                <img src="/img/icon/f3/icon_DS2.png" /><span>ห้องปฏิบัติการด้านการผลิตรายการดิจิทัลขนาดเล็ก</span></div>
+            <div class="legend-item" onclick="showRoom('ห้อง VL', 'ห้องเทคโนโลยีเสมือนจริง', '/img/GPS/f3/VL.png')"><img
+                    src="/img/icon/f3/icon_VL.png" /><span>ห้องเทคโนโลยีเสมือนจริง</span></div>
+            <div class="legend-item"
+                onclick="showRoom('ห้อง R', 'ห้องปฏิบัติการวิจัยเทคโนโลยีสื่อดิจิทัล', '/img/GPS/f3/R.png')"><img
+                    src="/img/icon/f3/icon_R.png" /><span>ห้องปฏิบัติการวิจัยเทคโนโลยีสื่อดิจิทัล</span></div>
+            <div class="legend-item" onclick="showRoom('ห้อง K', 'ห้องควบคุมทางเทคนิค', '/img/GPS/f3/K.png')"><img
+                    src="/img/icon/f3/icon_K.png" /><span>ห้องควบคุมทางเทคนิค</span></div>
+        </div>
+
+        <div class="room-legend-column">
+            <div class="legend-item"
+                onclick="showRoom('ห้อง PS', 'ห้องปฏิบัติการบริหารจัดการคลังสื่อดิจิทัล 1 - 6', '/img/GPS/f3/PS.png')">
+                <img src="/img/icon/f3/icon_PS.png" /><span>ห้องปฏิบัติการบริหารจัดการคลังสื่อดิจิทัล 1 - 6</span></div>
+            <div class="legend-item" onclick="showRoom('ห้อง S', 'ห้องคัดเลือกสื่อดิจิทัล', '/img/GPS/f3/S.png')"><img
+                    src="/img/icon/f3/icon_S.png" /><span>ห้องคัดเลือกสื่อดิจิทัล</span></div>
+            <div class="legend-item"
+                onclick="showRoom('ห้อง N', 'ห้องปฏิบัติการตรวจสอบคุณภาพสื่อ', '/img/GPS/f3/N.png')"><img
+                    src="/img/icon/f3/icon_N.png" /><span>ห้องปฏิบัติการตรวจสอบคุณภาพสื่อ</span></div>
+            <div class="legend-item" onclick="showRoom('ห้อง T', 'ห้องสตูดิโอบันทึกเสียง 1 - 4', '/img/GPS/f3/T.png')">
+                <img src="/img/icon/f3/icon_T.png" /><span>ห้องสตูดิโอบันทึกเสียง 1 - 4</span></div>
+            <div class="legend-item"
+                onclick="showRoom('ห้อง V', 'ห้องปฏิบัติการด้านเสียงขั้นสูง', '/img/GPS/f3/V.png')"><img
+                    src="/img/icon/f3/icon_V.png" /><span>ห้องปฏิบัติการด้านเสียงขั้นสูง</span></div>
+            <div class="legend-item"
+                onclick="showRoom('ห้อง G', 'ห้องผลิตสื่อการสอนด้วยตนเอง 1 - 4', '/img/GPS/f3/G.png')"><img
+                    src="/img/icon/f3/icon_G.png" /><span>ห้องผลิตสื่อการสอนด้วยตนเอง 1 - 4</span></div>
+            <div class="legend-item" onclick="showRoom('ห้อง L', 'ลิฟต์', '/img/GPS/f3/L.png')"><img
+                    src="/img/icon/f3/icon_L.png" /><span>ลิฟต์</span></div>
+            <div class="legend-item" onclick="showRoom('ห้อง E', 'บันไดเลื่อน', '/img/GPS/f3/E.png')"><img
+                    src="/img/icon/f3/icon_E.png" /><span>บันไดเลื่อน</span></div>
+            <div class="legend-item" onclick="showRoom('ห้อง F', 'บันไดหนีไฟ', '/img/GPS/f3/F.png')"><img
+                    src="/img/icon/f3/icon_F.png" /><span>บันไดหนีไฟ</span></div>
+        </div>
+    </div>
+
+    <div class="map-container3" id="map">
+        <!-- Rooms -->
+    </div>
+
+    <!-- Room Info -->
+    <div id="room-info" class="room-info">
+        <h2 id="room-name"></h2>
+        <p id="room-details"></p>
+        <button class="close-btn" onclick="closeRoom()">Close</button>
+    </div>
+
+    <!-- Page Navigation Buttons -->
+    <div class="button-container">
+        <button onclick="goToPage(1)">1</button>
+        <button onclick="goToPage(2)">2</button>
+        <button onclick="goToPage(3)">3</button>
+        <button onclick="goToPage(4)">4</button>
+        <button onclick="goToPage(5)">5</button>
+    </div>
+
+    <!-- Footer -->
+    <footer class="custom-footer">
+        <!-- ... (เหมือนเดิม) -->
+    </footer>
+
+    <!-- Room Modal -->
+    <div id="room-modal" class="modal">
+        <img id="room-img" src="" alt="Room Image" class="modal-image">
+        <h2 id="room-title" class="modal-title"></h2>
+        <p id="room-description" class="modal-description"></p>
+        <button class="modal-close" onclick="closeRoom()">ปิด</button>
+    </div>
+
+    <!-- JavaScript -->
+    <script>
+        function showRoom(name, details, imgSrc) {
+            document.getElementById('room-modal').style.display = 'block';
+            document.getElementById('room-title').textContent = name;
+            document.getElementById('room-description').textContent = details;
+            document.getElementById('room-img').src = imgSrc;
+        }
+
+        function closeRoom() {
+            document.getElementById('room-modal').style.display = 'none';
+        }
+
+        function goToPage(num) {
+            const currentPage = getCurrentPageNumber();
+            if (currentPage === num) return;
+            window.location.href = `map${num}.html`;
+        }
+
+        function getCurrentPageNumber() {
+            const match = window.location.pathname.match(/map(\d+)\.html/);
+            return match ? parseInt(match[1], 10) : 1;
+        }
+
+        function nextPage() {
+            const currentPage = getCurrentPageNumber();
+            if (currentPage < 5) goToPage(currentPage + 1);
+        }
+
+        function previousPage() {
+            const currentPage = getCurrentPageNumber();
+            if (currentPage > 1) goToPage(currentPage - 1);
+        }
+
+        // Drag-to-switch feature
+        let isDragging = false;
+        let startX = 0;
+        let currentX = 0;
+        const dragThreshold = 100;
+        const map = document.getElementById('map');
+
+        document.addEventListener('mousedown', function (e) {
+            isDragging = true;
+            startX = e.clientX;
+            map.style.transition = 'none';
+        });
+
+        document.addEventListener('mousemove', function (e) {
+            if (!isDragging) return;
+            currentX = e.clientX;
+            const deltaX = currentX - startX;
+            map.style.transform = `translateX(${deltaX}px)`;
+        });
+
+        document.addEventListener('mouseup', function (e) {
+            if (!isDragging) return;
+            isDragging = false;
+            const deltaX = e.clientX - startX;
+
+            map.style.transition = 'transform 0.3s ease';
+
+            if (deltaX < -dragThreshold) {
+                map.style.transform = `translateX(-100vw)`;
+                setTimeout(() => {
+                    map.style.transform = 'translateX(0)';
+                    nextPage();
+                }, 200);
+            } else if (deltaX > dragThreshold) {
+                map.style.transform = `translateX(100vw)`;
+                setTimeout(() => {
+                    map.style.transform = 'translateX(0)';
+                    previousPage();
+                }, 200);
+            } else {
+                map.style.transform = 'translateX(0)';
+            }
+        });
+
+        function highlightCurrentPageButton() {
+            const currentPage = getCurrentPageNumber();
+            const buttons = document.querySelectorAll('.button-container button');
+
+            buttons.forEach(button => {
+                if (parseInt(button.textContent, 10) === currentPage) {
+                    button.classList.add('active');
+                } else {
+                    button.classList.remove('active');
+                }
+            });
+        }
+
+        window.onload = highlightCurrentPageButton;
+    </script>
+</body>
+
+</html>

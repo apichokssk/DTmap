@@ -1,0 +1,533 @@
+
+/*map1*/
+
+body {
+    font-family: Arial, sans-serif;
+    text-align: center;
+}
+
+.map-container {
+    position: relative;
+    width: 1000px;
+    height: 1000px;
+    margin: auto;
+    background-image: url('/img/map/f1/f1.png');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    transition: transform 0.3s ease;
+    will-change: transform;
+}
+
+.room {
+    position: absolute;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    font-weight: bold;
+   
+}
+
+.rectangle {
+    background-color: #ba7d36;
+}
+
+.guard {
+    background-color: none;
+}
+
+.trapezoid {
+    background-color: #ff5733;
+    clip-path: polygon(10% 0%, 90% 0%, 100% 100%, 0% 100%);
+}
+
+.polygon {
+    background-color: #3498db;
+    clip-path: polygon(0% 0%, 100% 0%, 80% 100%, 20% 100%);
+}
+
+.room-info {
+    display: none;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 250px;
+    background: white;
+    border: 1px solid #ccc;
+    padding: 10px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+.close-btn {
+    margin-top: 10px;
+    background: red;
+    color: white;
+    border: none;
+    padding: 5px 10px;
+    cursor: pointer;
+}
+
+.custom-shape {
+    background-color: #ffcc00;
+    clip-path: polygon(0 0, 78% 0%, 78% 36%, 100% 36%, 100% 100%, 30% 100%, 0 100%, 0% 30%);
+}
+.custom-shapeLS {
+    background-color: #ff603e;
+    clip-path: polygon(75% 0, 100% 49%, 75% 100%, 0 100%, 0 0);
+}
+
+.custom-shapeD {
+    background-color: #3399ff;
+    clip-path: inset(0 0 0 0);
+}
+
+.marker {
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    background-color: red;
+    border-radius: 50%;
+    animation: blink 1s infinite alternate;
+}
+
+@keyframes blink {
+    0% { opacity: 1; }
+    100% { opacity: 0.5; }
+}
+
+.arrow {
+    position: fixed;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 36px;
+    color: rgba(0, 0, 0, 0.4);
+    background-color: rgba(255, 255, 255, 0.7);
+    padding: 10px 15px;
+    border-radius: 50%;
+    cursor: pointer;
+    z-index: 999;
+    user-select: none;
+    transition: 0.3s ease;
+}
+.arrow:hover {
+    background-color: rgba(255, 255, 255, 1);
+    color: rgba(0, 0, 0, 0.8);
+}
+.arrow.left {
+    left: 10px;
+}
+.arrow.right {
+    right: 10px;
+}
+
+
+
+/*map2*/
+
+.map-container2 {
+    position: relative;
+    width: 800px;
+    height: 1300px;
+    margin: auto;
+    background-image: url('/img/map/f2/f2.png');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    transition: transform 0.3s ease;
+    will-change: transform;
+}
+
+
+
+/*map3*/
+.map-container3 {
+  position: relative;
+  margin: auto;
+  background-image: url('/img/map/f3/f3.png');
+  background-size: cover;
+  background-position: center;
+  transition: transform 0.3s ease;
+  will-change: transform;
+}
+
+
+
+/*map4*/
+.map-container4 {
+    position: relative;
+    width: 1000px;
+    height: 1000px;
+    margin: auto;
+    background-image: url('/img/map/f4/f4.png');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    transition: transform 0.3s ease;
+    will-change: transform;
+}
+
+
+
+/*map5*/
+.map-container5 {
+    position: relative;
+    width: 1000px;
+    height: 1000px;
+    margin: auto;
+    background-image: url('/img/map/f5/f5.png');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    transition: transform 0.3s ease;
+    will-change: transform;
+}
+
+
+
+
+.button-container {
+    text-align: center;
+    margin: 20px 0;
+}
+
+.button-container button {
+    width: 40px;
+    height: 40px;
+    margin: 0 5px;
+    border: none;
+    border-radius: 50%;
+    background-color: #ccc;
+    color: white;
+    font-weight: bold;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.button-container button.active {
+    background-color: #fe9659;
+}
+
+.header {
+    background-color: #fe9659;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+    color: #fff;
+  }
+
+  .header-left {
+    display: flex;
+    align-items: center;
+  }
+
+  .header-left img {
+    height: 60px;
+    margin-right: 15px;
+  }
+
+  .university-name {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .university-name .th {
+    font-size: 20px;
+    font-weight: bold;
+  }
+
+  .university-name .en {
+    font-size: 14px;
+    font-style: italic;
+  }
+
+  .language-buttons {
+    display: flex;
+    gap: 10px;
+  }
+
+  .lang-btn {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background-color: white;
+    color: #fe9659;
+    font-weight: bold;
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.3s;
+  }
+
+  .lang-btn:hover {
+    background-color: #ffd1b5;
+  }
+
+  .custom-footer {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 30px;
+    background-color: #0f65aa;
+    color: white;
+    padding: 40px 20px;
+    font-family: Arial, sans-serif;
+  }
+  
+  .footer-section h3 {
+    margin-bottom: 15px;
+  }
+  
+  .footer-section ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+  
+  .footer-section ul li {
+    margin-bottom: 10px;
+    color: white;
+    line-height: 1.4;
+  }
+  
+  .footer-section p {
+    margin-top: 10px;
+    color: white;
+  }
+  
+  .qr-code {
+    width: 100px;
+    height: auto;
+    margin-top: 10px;
+  }
+  
+
+  
+  .map-container,
+.map-container2,
+.map-container3,
+.map-container4,
+.map-container5 {
+    position: relative;
+    width: 1000px;
+    height: 1000px;
+    margin: auto;
+    background-size: cover;
+    background-position: center 500px;
+    background-position: center;
+    background-repeat: no-repeat;
+    transition: transform 0.3s ease;
+    will-change: transform;
+}
+
+
+.hamburger {
+    display: none;
+    font-size: 30px;
+    color: white;
+    cursor: pointer;
+  }
+  
+  .mobile-menu {
+    display: none;
+    position: absolute;
+    top: 70px;
+    right: 20px;
+    background-color: white;
+    padding: 10px;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+    z-index: 999;
+  }
+  
+  .mobile-menu .lang-btn {
+    display: block;
+    margin: 5px auto;
+  }
+  
+  
+
+/* Overlay */
+.overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.6);  /* แสดงพื้นหลังมืด */
+    z-index: 999;  /* ตั้งค่า z-index ให้อยู่เบื้องหลัง */
+    display: none;
+}
+
+/* Modal */
+.modal {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: white;
+    width: 80%;
+    max-width: 600px;
+    padding: 20px;
+    border-radius: 12px;
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.3);
+    z-index: 1000;  /* ให้ modal อยู่เหนือ overlay */
+    display: none;
+    text-align: center;
+}
+
+/* เพิ่มการซ่อน modal และ overlay เมื่อไม่ได้แสดง */
+#overlay, #room-modal {
+    display: none;
+}
+
+/* รูปภาพใน modal */
+.modal-image {
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
+    margin-bottom: 15px;
+}
+
+/* ปุ่มปิด modal */
+.modal-close {
+    margin-top: 15px;
+    padding: 8px 16px;
+    background-color: #fe9659;
+    color: white;
+    border: none;
+    border-radius: 6px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+  
+
+  .search-container {
+    display: flex;
+    justify-content: center;
+    margin: 20px 0;
+  }
+  
+  #search-box {
+    padding: 8px;
+    font-size: 14px;
+    margin-right: 10px;
+  }
+  
+  #room-dropdown {
+    padding: 8px;
+    font-size: 14px;
+    margin-right: 10px;
+  }
+  
+  button {
+    padding: 8px 16px;
+    background-color: #fe9659;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  
+  button:hover {
+    background-color: #e87a49;
+  }
+  
+  .modal {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: white;
+    width: 80%;
+    max-width: 1000px;
+    padding: 20px;
+    border-radius: 12px;
+    box-shadow: 0 8px 30px rgba(0,0,0,0.3);
+    display: none;
+    z-index: 999;
+    text-align: center;
+  }
+  
+  .modal-image {
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
+    margin-bottom: 15px;
+  }
+  
+  .modal-close {
+    margin-top: 15px;
+    padding: 8px 16px;
+    background-color: #fe9659;
+    color: white;
+    border: none;
+    border-radius: 6px;
+    font-weight: bold;
+    cursor: pointer;
+  }
+  
+
+
+
+  .room-legend-container {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 40px;
+    margin: 40px 20px;
+  }
+  
+  .room-legend-column {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    width: 400px;
+  }
+  
+  .legend-item {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    background: #f4f4f4;
+    padding: 2px 12px;
+    border-radius: 5px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    transition: transform 0.2s ease;
+  }
+  
+  .legend-item img {
+    width: 30px;
+    height: 30px;
+    object-fit: contain;
+  }
+  
+  .legend-item:hover {
+    transform: scale(1.03);
+  }
+  
+
+
+  /* เพิ่มในส่วน style.css หรือใน <style> */
+.lang-btn {
+  background: none;
+  border: 1px solid white;
+  color: white;
+  padding: 5px 10px;
+  margin: 0 5px;
+  cursor: pointer;
+  border-radius: 3px;
+  transition: all 0.3s;
+}
+
+.lang-btn.active {
+  background-color: white;
+  color: #3366cc;
+  font-weight: bold;
+}
+
+.translatable {
+  transition: all 0.3s ease;
+}
