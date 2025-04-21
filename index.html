@@ -167,12 +167,12 @@
         function goToPage(num) {
             const currentPage = getCurrentPageNumber();
             if (currentPage === num) return;
-            window.location.href = `map${num}.html`;
+            window.location.href = `index${num}.html`;
         }
 
 
         function getCurrentPageNumber() {
-            const match = window.location.pathname.match(/map(\d+)\.html/);
+            const match = window.location.pathname.match(/index(\d+)\.html/);
             return match ? parseInt(match[1], 10) : 1;
         }
 
