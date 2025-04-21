@@ -178,7 +178,6 @@
             const match = window.location.pathname.match(/map(\d+)\.html/);
             return match ? parseInt(match[1], 10) : 1;
         }
-
         function nextPage() {
             const currentPage = getCurrentPageNumber();
             if (currentPage < 5) goToPage(currentPage + 1);
